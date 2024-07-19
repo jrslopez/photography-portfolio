@@ -6,7 +6,8 @@ import Icons from "./components/icons"
 import "bootstrap/dist/css/bootstrap.css"
 import "./App.css"
 import { Gallery } from "react-grid-gallery"
-import { images } from "./components/gallery"
+import { images } from "./components/gallery-example"
+import Images from "./components/images"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Next />
       <Icons />
       <Gallery images={images} rowHeight={400} />
+      <Images />
     </div>
   )
 }
