@@ -6,6 +6,7 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Contact from "./components/Contact"
 import Upload from "./components/Upload"
+import Album from "./components/Albums"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/upload" element={<Upload />} />
+            <Route exact path="/:albumName" element={<Album />} />
           </Routes>
         </div>
       </div>
