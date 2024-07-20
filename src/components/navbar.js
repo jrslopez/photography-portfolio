@@ -1,21 +1,23 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
   return (
     <div class="mt-4">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link text-main" href="#">
+          <Link class="nav-link text-main" to="">
             Home
-          </a>
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-main" href="#">
-            Contact
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-main" href="#">
+          <Link class="nav-link text-main" to="/about">
             About
-          </a>
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link text-main" to="/contact">
+            Contact
+          </Link>
         </li>
       </ul>
     </div>

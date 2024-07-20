@@ -22,8 +22,6 @@ const Images = () => {
     src: element.url,
   }))
 
-  console.log(images)
-
   //test click to direct to albums
   const testClick = () => {
     console.log("click my etits")
