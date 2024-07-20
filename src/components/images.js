@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react"
 import { Gallery } from "react-grid-gallery"
+import { useNavigate } from "react-router-dom"
 
 const Images = () => {
   const [frontImages, setFrontImages] = useState([])
+  const navigate = useNavigate()
 
   const getImages = async () => {
     try {
@@ -18,13 +20,15 @@ const Images = () => {
     getImages()
   }, [])
 
-  const images = frontImages.map((element) => ({
-    src: element.url,
-  }))
+  const images = frontImages.map((element) => {
+    return {
+      src: element.url,
+      albumName: element.album_name,
+    }
+  })
 
-  //test click to direct to albums
-  const testClick = () => {
-    console.log("click my etits")
+  const imageClick = (albumName) => {
+    navigate(`/${albumName}`)
   }
 
   return (
@@ -36,7 +40,7 @@ const Images = () => {
             rowHeight={350}
             enableImageSelection={false}
             margin={10}
-            onClick={testClick}
+            onClick={(e) => imageClick(images[e].albumName)}
           />
         </div>
       </div>
