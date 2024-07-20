@@ -25,11 +25,22 @@ const Images = () => {
 
   console.log(images)
 
+  //test click to direct to albums
+  const testClick = () => {
+    console.log("click my etits")
+  }
+
   return (
     <Fragment>
       <div className="GifSearch">
-        <div>
-          <Gallery images={images} rowHeight={300} />
+        <div className="front-gallery">
+          <Gallery
+            images={images}
+            rowHeight={350}
+            enableImageSelection={false}
+            margin={10}
+            onClick={testClick}
+          />
         </div>
       </div>
     </Fragment>

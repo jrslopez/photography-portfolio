@@ -22,3 +22,8 @@ a.navlink {
   font-weight: 700;
   font-style: normal;
 }
+
+.front-gallery {
+  margin: auto 20px;
+  border: 1px solid red;
+}
