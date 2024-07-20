@@ -1,5 +1,3 @@
-import Landing from "./components/landing"
-import Next from "./components/next"
 import Navbar from "./components/navbar"
 import Logo from "./components/logo"
 import Icons from "./components/icons"
@@ -12,8 +10,6 @@ function App() {
     <div>
       <Navbar />
       <Logo />
-      <Landing />
-      <Next />
       <Icons />
       <Images />
     </div>

@@ -9,7 +9,6 @@ const Images = () => {
       const response = await fetch("http://localhost:4000")
       const jsonData = await response.json()
       setFrontImages(jsonData)
-      // console.log(jsonData[0].url)
     } catch (error) {
       console.error(error.message)
     }
