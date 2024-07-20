@@ -6,7 +6,6 @@ import useFetchImages from "./useFetchImages"
 const MainGallery = () => {
   const navigate = useNavigate()
   const images = useFetchImages()
-  console.log("images", images)
 
   const imageClick = (index) => {
     const albumName = images[index].albumName
