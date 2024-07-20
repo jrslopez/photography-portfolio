@@ -1,6 +1,6 @@
 import Logo from "./logo"
 import Icons from "./icons"
-import frontGallery from "./frontGallery"
+import MainGallery from "./MainGallery"
 import React, { Fragment } from "react"
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <Fragment>
       <Logo />
       <Icons />
-      <frontGallery />
+      <MainGallery />
     </Fragment>
   )
 }

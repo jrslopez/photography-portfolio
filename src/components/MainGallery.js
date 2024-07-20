@@ -1,13 +1,15 @@
 import React, { Fragment } from "react"
 import { Gallery } from "react-grid-gallery"
 import { useNavigate } from "react-router-dom"
-import { useFetchImages } from "./useFetchImages"
+import useFetchImages from "./useFetchImages"
 
-const frontGallery = () => {
+const MainGallery = () => {
   const navigate = useNavigate()
   const images = useFetchImages()
+  console.log("images", images)
 
-  const imageClick = (albumName) => {
+  const imageClick = (index) => {
+    const albumName = images[index].albumName
     navigate(`/${albumName}`)
   }
 
@@ -20,7 +22,9 @@ const frontGallery = () => {
             rowHeight={350}
             enableImageSelection={false}
             margin={10}
-            onClick={(e) => imageClick(images[e].albumName)}
+            onClick={(e) => {
+              imageClick(e)
+            }}
           />
         </div>
       </div>
@@ -28,4 +32,4 @@ const frontGallery = () => {
   )
 }
 
-export default frontGallery
+export default MainGallery
