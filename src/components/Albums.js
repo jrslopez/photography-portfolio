@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react"
 import { useParams } from "react-router-dom"
 import useFetchImages from "./useFetchImages"
-import { Gallery } from "react-grid-gallery"
+import PhotoAlbum from "react-photo-album"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
 
@@ -24,15 +24,15 @@ const Album = () => {
       <div>
         <h1> Album: {albumName}</h1>
       </div>
-      <div className="GifSearch">
+      <div>
         <div className="album-gallery">
-          <Gallery
-            images={albumImages}
-            rowHeight={350}
-            enableImageSelection={false}
-            margin={10}
+          <PhotoAlbum
+            photos={albumImages}
+            layout="rows"
+            targetRowHeight="450"
+            spacing="5"
             onClick={(e) => {
-              setIndex(e)
+              setIndex(e.index)
             }}
           />
 

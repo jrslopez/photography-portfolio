@@ -7,9 +7,32 @@ const useFetchImages = () => {
     try {
       const response = await fetch("http://localhost:4000")
       const jsonData = await response.json()
-      const processedImages = jsonData.map((element) => {
-        return { src: element.url, albumName: element.album_name }
-      })
+
+      //returns width and height automatically (how? idk)
+
+      const processedImages = await Promise.all(
+        jsonData.map(async (element) => {
+          const image = new Image()
+          image.src = element.url
+          return new Promise((resolve) => {
+            image.onload = () => {
+              resolve({
+                src: element.url,
+                albumName: element.album_name,
+                width: image.width,
+                height: image.height,
+              })
+            }
+          })
+        })
+      )
+
+      // this is simpler but does not return width and height automatically
+
+      // const processedImages = jsonData.map((element) => {
+      //   return { src: element.url, albumName: element.album_name }
+      // })
+
       setImages(processedImages)
     } catch (error) {
       console.error(error.message)

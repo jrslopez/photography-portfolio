@@ -25,5 +25,8 @@ a.navlink {
 
 .front-gallery {
   margin: auto 20px;
-  border: 1px solid red;
+}
+
+.album-gallery {
+  margin: 50px 20px;
 }

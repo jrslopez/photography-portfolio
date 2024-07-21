@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
-import { Gallery } from "react-grid-gallery"
 import { useNavigate } from "react-router-dom"
 import useFetchImages from "./useFetchImages"
+import PhotoAlbum from "react-photo-album"
 
 const MainGallery = () => {
   const navigate = useNavigate()
@@ -16,13 +16,12 @@ const MainGallery = () => {
     <Fragment>
       <div className="GifSearch">
         <div className="front-gallery">
-          <Gallery
-            images={images}
-            rowHeight={350}
-            enableImageSelection={false}
-            margin={10}
+          <PhotoAlbum
+            photos={images}
+            layout="rows"
+            targetRowHeight="400"
             onClick={(e) => {
-              imageClick(e)
+              imageClick(e.index)
             }}
           />
         </div>
