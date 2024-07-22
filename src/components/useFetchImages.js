@@ -8,7 +8,7 @@ const useFetchImages = () => {
       const response = await fetch("http://localhost:4000")
       const jsonData = await response.json()
 
-      //returns width and height automatically (how? idk)
+      //returns width and height automatically (how? idk) to be used for PhotoAlbum
 
       const processedImages = await Promise.all(
         jsonData.map(async (element) => {
