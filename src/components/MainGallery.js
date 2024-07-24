@@ -11,7 +11,7 @@ const MainGallery = () => {
   console.log(frontImages)
 
   const imageClick = (index) => {
-    const albumName = images[index].albumName
+    const albumName = frontImages[index].albumName
     navigate(`/${albumName}`)
   }
 
