@@ -7,6 +7,9 @@ const MainGallery = () => {
   const navigate = useNavigate()
   const images = useFetchImages()
 
+  const frontImages = images.filter((element) => element.front === true)
+  console.log(frontImages)
+
   const imageClick = (index) => {
     const albumName = images[index].albumName
     navigate(`/${albumName}`)
@@ -17,7 +20,7 @@ const MainGallery = () => {
       <div className="GifSearch">
         <div className="front-gallery">
           <PhotoAlbum
-            photos={images}
+            photos={frontImages}
             layout="rows"
             targetRowHeight="400"
             onClick={(e) => {

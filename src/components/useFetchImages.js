@@ -21,6 +21,7 @@ const useFetchImages = () => {
                 albumName: element.album_name,
                 width: image.width,
                 height: image.height,
+                front: element.front,
               })
             }
           })
