@@ -17,7 +17,7 @@ const MainGallery = () => {
 
   return (
     <Fragment>
-      <div className="GifSearch">
+      <div>
         <div className="front-gallery">
           <PhotoAlbum
             photos={frontImages}

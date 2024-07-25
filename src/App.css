@@ -1,14 +1,7 @@
-a.navlink {
-  color: black;
-}
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 .text-main {
   color: #0173aa;
-}
-
-@font-face {
-  font-family: "Crimson Text";
-  src: url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 }
 
 .crimson-text-regular {
@@ -29,4 +22,16 @@ a.navlink {
 
 .album-gallery {
   margin: 50px 20px;
+}
+
+.logo {
+  margin: auto 20px;
+}
+
+.icons {
+  color: black;
+}
+
+i:hover {
+  cursor: pointer;
 }

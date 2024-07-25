@@ -1,13 +1,13 @@
 import Logo from "./logo"
-import Icons from "./icons"
 import MainGallery from "./MainGallery"
+import Navbar from "./navbar"
 import React, { Fragment } from "react"
 
 const Home = () => {
   return (
     <Fragment>
+      <Navbar />
       <Logo />
-      <Icons />
       <MainGallery />
     </Fragment>
   )
