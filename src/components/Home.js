@@ -1,6 +1,6 @@
-import Logo from "./logo"
+import Logo from "./Logo"
 import MainGallery from "./MainGallery"
-import Navbar from "./navbar"
+import Navbar from "./Navbar"
 import React, { Fragment } from "react"
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <Fragment>
       <Navbar />
       <Logo />
-      <MainGallery />
+      <MainGallery />4
     </Fragment>
   )
 }

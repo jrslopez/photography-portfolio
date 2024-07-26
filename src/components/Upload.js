@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react"
+import Login from "./Login"
 
 const Upload = () => {
   const [imageURL, setImageURL] = useState("")
@@ -21,6 +22,7 @@ const Upload = () => {
 
   return (
     <Fragment>
+      <Login />
       <h1 className="text-center mt-5">Upload Album Information</h1>
       <form className="d-flex flex-column mt-5" onSubmit={onSubmitForm}>
         <input

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Fragment } from "react"
-import Icons from "./icons"
+import Icons from "./Icons"
 
 function Navbar() {
   return (
