@@ -9,7 +9,7 @@ const Login = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Launch demo modal
+        Sign in here
       </button>
 
       <div
@@ -32,7 +32,7 @@ const Login = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">Good morning James!</div>
             <div className="modal-footer">
               <button
                 type="button"
