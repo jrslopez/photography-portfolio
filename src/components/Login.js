@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 
 const Login = () => {
+  console.log("testing log in")
   return (
     <Fragment>
       <button
