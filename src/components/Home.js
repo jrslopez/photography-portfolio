@@ -8,7 +8,7 @@ const Home = () => {
     <Fragment>
       <Navbar />
       <Logo />
-      <MainGallery />4
+      <MainGallery />
     </Fragment>
   )
 }

@@ -1,7 +1,9 @@
-import React, { Fragment } from "react"
+import React, { useState, Fragment } from "react"
 
 const Login = () => {
-  console.log("testing log in")
+  const [user, setUser] = useState("")
+  const [password, setPassword] = useState("")
+
   return (
     <Fragment>
       <button
@@ -33,7 +35,26 @@ const Login = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">Good morning James!</div>
+            <div className="modal-body">
+              <div>
+                <form className="d-flex flex-column mt-5">
+                  <input
+                    type="text"
+                    className="form-control mb-2"
+                    placeholder="User Name"
+                    value={user}
+                    onChange={(e) => setUser(e.target.value)}
+                  />
+                  <input
+                    type="password"
+                    className="form-control mb-2"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </form>
+              </div>
+            </div>
             <div className="modal-footer">
               <button
                 type="button"
