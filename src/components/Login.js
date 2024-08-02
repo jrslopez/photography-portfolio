@@ -4,6 +4,19 @@ const Login = () => {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
 
+  // const onSubmitForm = async (e) => {
+  //   try {
+  //     const body = { album_name: albumName, date, url: imageURL, front }
+  //     const response = await fetch("http://localhost:4000/upload", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(body),
+  //     })
+  //   } catch (error) {
+  //     console.error(error.message)
+  //   }
+  // }
+
   return (
     <Fragment>
       <button
