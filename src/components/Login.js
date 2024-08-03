@@ -1,21 +1,33 @@
 import React, { useState, Fragment } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
+  const [authenticated, setAuthenticated] = useState(false)
 
-  // const onSubmitForm = async (e) => {
-  //   try {
-  //     const body = { album_name: albumName, date, url: imageURL, front }
-  //     const response = await fetch("http://localhost:4000/upload", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(body),
-  //     })
-  //   } catch (error) {
-  //     console.error(error.message)
-  //   }
-  // }
+  const navigate = useNavigate()
+
+  const getCredentials = async () => {
+    const response = await fetch("http://localhost:4000/login")
+    const jsonData = await response.json()
+  }
+
+  const onSubmitForm = async (e) => {
+    try {
+      e.preventDefault()
+      if ((user === "admin" && password === "1234") || authenticated) {
+        if (!authenticated) {
+          setAuthenticated(true)
+        }
+        navigate("/about")
+      } else {
+        alert("maliit titi mo")
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
 
   return (
     <Fragment>
@@ -39,7 +51,7 @@ const Login = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
+                Enter Username and Password
               </h1>
               <button
                 type="button"
@@ -50,7 +62,10 @@ const Login = () => {
             </div>
             <div className="modal-body">
               <div>
-                <form className="d-flex flex-column mt-5">
+                <form
+                  className="d-flex flex-column mt-5"
+                  onSubmit={onSubmitForm}
+                >
                   <input
                     type="text"
                     className="form-control mb-2"
@@ -65,20 +80,20 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="submit" className="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
                 </form>
               </div>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
             </div>
           </div>
         </div>

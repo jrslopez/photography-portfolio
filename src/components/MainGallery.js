@@ -8,7 +8,6 @@ const MainGallery = () => {
   const images = useFetchImages()
 
   const frontImages = images.filter((element) => element.front === true)
-  console.log(frontImages)
 
   const imageClick = (index) => {
     const albumName = frontImages[index].albumName
