@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useFetchImages = () => {
+const FetchImages = () => {
   const [images, setImages] = useState([])
 
   const getImages = async () => {
@@ -47,4 +47,4 @@ const useFetchImages = () => {
   return images
 }
 
-export default useFetchImages
+export default FetchImages
