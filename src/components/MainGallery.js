@@ -1,11 +1,11 @@
 import React, { Fragment } from "react"
 import { useNavigate } from "react-router-dom"
-import useFetchImages from "./useFetchImages"
+import FetchImages from "./FetchImages"
 import PhotoAlbum from "react-photo-album"
 
 const MainGallery = () => {
   const navigate = useNavigate()
-  const images = useFetchImages()
+  const images = FetchImages()
 
   const frontImages = images.filter((element) => element.front === true)
 

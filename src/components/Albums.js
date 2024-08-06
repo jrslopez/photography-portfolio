@@ -1,13 +1,13 @@
 import React, { Fragment, useState } from "react"
 import { useParams } from "react-router-dom"
-import useFetchImages from "./useFetchImages"
+import FetchImages from "./useFetchImages"
 import PhotoAlbum from "react-photo-album"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
 
 const Album = () => {
   const [index, setIndex] = useState(-1)
-  const images = useFetchImages()
+  const images = FetchImages()
 
   const { albumName } = useParams()
 
