@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react"
 import { useParams } from "react-router-dom"
-import FetchImages from "./useFetchImages"
+import FetchImages from "./FetchImages"
 import PhotoAlbum from "react-photo-album"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
