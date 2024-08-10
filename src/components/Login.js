@@ -20,7 +20,7 @@ const Login = () => {
         if (!authenticated) {
           setAuthenticated(true)
         }
-        navigate("/about")
+        navigate("/upload")
       } else {
         alert("maliit titi mo")
       }
@@ -32,14 +32,20 @@ const Login = () => {
   return (
     <Fragment>
       <div>
-        <form className="d-flex flex-column mt-5" onSubmit={onSubmitForm}>
+        <form
+          className="d-flex flex-column mt-5 needs-validation"
+          novalidate
+          // onSubmit={onSubmitForm}
+        >
           <input
             type="text"
             className="form-control mb-2"
             placeholder="User Name"
             value={user}
             onChange={(e) => setUser(e.target.value)}
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
           <input
             type="password"
             className="form-control mb-2"

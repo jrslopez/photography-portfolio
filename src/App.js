@@ -8,6 +8,8 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Upload from "./components/Upload"
 import Album from "./components/Albums"
+import Login from "./components/Login"
+import Validation from "./components/Validation"
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/upload" element={<Upload />} />
           <Route exact path="/:albumName" element={<Album />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/validation" element={<Validation />} />
         </Routes>
       </div>
     </Router>
