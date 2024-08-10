@@ -1,14 +1,13 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect } from "react"
 
 const Validation = () => {
-  const validationSubmission = () => {
-    var forms = document.querySelectorAll(".needs-validation")
+  useEffect(() => {
+    const forms = document.querySelectorAll(".needs-validation")
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms).forEach(function (form) {
+    Array.from(forms).forEach((form) => {
       form.addEventListener(
         "submit",
-        function (event) {
+        (event) => {
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
@@ -19,101 +18,112 @@ const Validation = () => {
         false
       )
     })
-  }
+  }, [])
 
   return (
     <Fragment>
-      <form
-        className="row g-3 needs-validation"
-        novalidate
-        onSubmit={validationSubmission}
-      >
-        <div class="col-md-4 position-relative form-group">
-          <label for="validationTooltip01" class="form-label">
+      <form className="row g-3 needs-validation" noValidate>
+        <div className="col-md-4">
+          <label htmlFor="validationCustom01" className="form-label">
             First name
           </label>
-          <input type="text" class="form-control" id="validationTooltip01" />
-          <div class="valid-tooltip">Looks good!</div>
-          <div className="invalid-feedback">UHMMMM</div>
+          <input
+            type="text"
+            className="form-control"
+            id="validationCustom01"
+            required
+          />
+          <div className="valid-feedback">Looks good!</div>
+          <div className="invalid-feedback">Please enter your first name.</div>
         </div>
-        <div class="col-md-4 position-relative form-group">
-          <label for="validationTooltip02" class="form-label">
+        <div className="col-md-4">
+          <label htmlFor="validationCustom02" className="form-label">
             Last name
           </label>
-          <input type="text" class="form-control" id="validationTooltip02" />
-          <div class="valid-tooltip">Looks good!</div>
-          <div className="invalid-feedback">UHMMMM</div>
+          <input
+            type="text"
+            className="form-control"
+            id="validationCustom02"
+            required
+          />
+          <div className="valid-feedback">Looks good!</div>
+          <div className="invalid-feedback">Please enter your last name.</div>
         </div>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltipUsername" class="form-label">
+        <div className="col-md-4">
+          <label htmlFor="validationCustomUsername" className="form-label">
             Username
           </label>
-          <div class="input-group has-validation">
-            <span
-              class="input-group-text"
-              id="validationTooltipUsernamePrepend"
-            >
+          <div className="input-group has-validation">
+            <span className="input-group-text" id="inputGroupPrepend">
               @
             </span>
             <input
               type="text"
-              class="form-control"
-              id="validationTooltipUsername"
-              aria-describedby="validationTooltipUsernamePrepend"
+              className="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              required
             />
-            <div class="invalid-tooltip">
-              Please choose a unique and valid username.
-            </div>
+            <div className="invalid-feedback">Please choose a username.</div>
           </div>
         </div>
-        <div class="col-md-6 position-relative">
-          <label for="validationTooltip03" class="form-label">
+        <div className="col-md-6">
+          <label htmlFor="validationCustom03" className="form-label">
             City
           </label>
-          <input type="text" class="form-control" id="validationTooltip03" />
-          <div class="invalid-tooltip">Please provide a valid city.</div>
+          <input
+            type="text"
+            className="form-control"
+            id="validationCustom03"
+            required
+          />
+          <div className="invalid-feedback">Please provide a valid city.</div>
         </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip04" class="form-label">
+        <div className="col-md-3">
+          <label htmlFor="validationCustom04" className="form-label">
             State
           </label>
-          <select class="form-select" id="validationTooltip04">
+          <select className="form-select" id="validationCustom04" required>
             <option selected disabled value="">
               Choose...
             </option>
             <option>...</option>
           </select>
-          <div class="invalid-tooltip">Please select a valid state.</div>
+          <div className="invalid-feedback">Please select a valid state.</div>
         </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label">
+        <div className="col-md-3">
+          <label htmlFor="validationCustom05" className="form-label">
             Zip
           </label>
-          <input type="text" class="form-control" id="validationTooltip05" />
-          <div class="invalid-tooltip">Please provide a valid zip.</div>
+          <input
+            type="text"
+            className="form-control"
+            id="validationCustom05"
+            required
+          />
+          <div className="invalid-feedback">Please provide a valid zip.</div>
         </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">
-            Submit form
-          </button>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">
-            Username
-          </label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">
-              @
-            </span>
+        <div className="col-12">
+          <div className="form-check">
             <input
-              type="text"
-              class="form-control"
-              id="validationCustomUsername"
-              aria-describedby="inputGroupPrepend"
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
               required
             />
-            <div class="invalid-feedback">Please choose a username.</div>
+            <label className="form-check-label" htmlFor="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div className="invalid-feedback">
+              You must agree before submitting.
+            </div>
           </div>
+        </div>
+        <div className="col-12">
+          <button className="btn btn-primary" type="submit">
+            Submit form
+          </button>
         </div>
       </form>
     </Fragment>

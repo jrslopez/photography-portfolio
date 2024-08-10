@@ -1,29 +1,18 @@
-import React, { useState, Fragment } from "react"
+import React, { useState, useEffect, Fragment } from "react"
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
-  const [authenticated, setAuthenticated] = useState(false)
 
   const navigate = useNavigate()
-
-  const getCredentials = async () => {
-    const response = await fetch("http://localhost:4000/login")
-    const jsonData = await response.json()
-  }
 
   const onSubmitForm = async (e) => {
     try {
       e.preventDefault()
-      if ((user === "admin" && password === "1234") || authenticated) {
-        if (!authenticated) {
-          setAuthenticated(true)
-        }
+      if (user === "admin" && password === "1234") {
         navigate("/upload")
-      } else {
-        alert("maliit titi mo")
-      }
+      } else alert("Wrong username and/or password!")
     } catch (error) {
       console.error(error.message)
     }
@@ -31,38 +20,51 @@ const Login = () => {
 
   return (
     <Fragment>
-      <div>
+      <div className="d-flex justify-content-center">
         <form
           className="d-flex flex-column mt-5 needs-validation"
-          novalidate
-          // onSubmit={onSubmitForm}
+          noValidate
+          onSubmit={onSubmitForm}
         >
-          <input
-            type="text"
-            className="form-control mb-2"
-            placeholder="User Name"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-            required
-          />
-          <div class="valid-feedback">Looks good!</div>
-          <input
-            type="password"
-            className="form-control mb-2"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-bs-dismiss="modal"
+          <div className="col-md">
+            <label
+              htmlFor="validationCustom01"
+              className="form-label crimson-text-regular"
             >
-              Close
-            </button>
-            <button type="submit" className="btn btn-primary">
-              Save changes
+              Username
+            </label>
+            <input
+              type="text"
+              className="form-control mb-2"
+              id="validationCustom01"
+              onChange={(e) => setUser(e.target.value)}
+              required
+            />
+            <div className="invalid-feedback">Wrong username!</div>
+          </div>
+          <div className="col-md">
+            <label
+              htmlFor="validationCustom02"
+              className="form-label crimson-text-regular"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control mb-2"
+              id="validationCustom02"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <div className="invalid-feedback">Wrong password!</div>
+          </div>
+
+          <div className="">
+            <button
+              type="submit"
+              className="btn btn-primary btn-sm crimson-text-regular"
+            >
+              Login
             </button>
           </div>
         </form>
