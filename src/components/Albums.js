@@ -22,7 +22,12 @@ const Album = () => {
   return (
     <Fragment>
       <div>
-        <h1> Album: {albumName}</h1>
+        <h1
+          className="crimson-text-regular text-main"
+          style={{ fontSize: "50px" }}
+        >
+          {albumName}
+        </h1>
       </div>
       <div>
         <div className="album-gallery">
