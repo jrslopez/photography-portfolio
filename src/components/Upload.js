@@ -5,7 +5,7 @@ const Upload = () => {
     imageURL: "",
     albumName: "",
     date: "",
-    front: false,
+    front: "",
   })
 
   const { imageURL, albumName, date, front } = state
@@ -23,6 +23,7 @@ const Upload = () => {
     updateField("date", "")
     updateField("front", "")
   }
+
   useEffect(() => {
     const forms = document.querySelectorAll(".needs-validation")
 
@@ -44,12 +45,15 @@ const Upload = () => {
 
   const onSubmitForm = async (e) => {
     try {
+      e.preventDefault()
       const body = { album_name: albumName, date, url: imageURL, front }
       const response = await fetch("http://localhost:4000/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       })
+      const alert = document.querySelector(".alert-success")
+      alert.classList.add("show")
     } catch (error) {
       console.error(error.message)
     }
@@ -57,7 +61,9 @@ const Upload = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Upload Album Information</h1>
+      <h1 className="text-center mt-5 crimson-text-regular">
+        Upload Album Information
+      </h1>
       <div className="d-flex">
         <form
           className="d-flex flex-column mt-1 needs-validation container w-50"
@@ -66,7 +72,10 @@ const Upload = () => {
         >
           <div className="row w-100 mx-auto">
             <div className="col-md">
-              <label htmlFor="validationCustom01" className="form-label">
+              <label
+                htmlFor="validationCustom01"
+                className="form-label crimson-text-regular"
+              >
                 Image
               </label>
               <input
@@ -86,7 +95,10 @@ const Upload = () => {
 
           <div className="row w-100 mx-auto">
             <div className="col-md">
-              <label htmlFor="validationCustom01" className="form-label">
+              <label
+                htmlFor="validationCustom01"
+                className="form-label crimson-text-regular"
+              >
                 Album
               </label>
               <input
@@ -106,7 +118,10 @@ const Upload = () => {
 
           <div className="row w-100 mx-auto">
             <div className="col-md-9">
-              <label htmlFor="validationCustom01" className="form-label">
+              <label
+                htmlFor="validationCustom01"
+                className="form-label crimson-text-regular"
+              >
                 Date
               </label>
               <input
@@ -121,7 +136,10 @@ const Upload = () => {
             </div>
 
             <div className="col-md-3">
-              <label htmlFor="validationCustom01" className="form-label">
+              <label
+                htmlFor="validationCustom01"
+                className="form-label crimson-text-regular"
+              >
                 Put in Home Page?
               </label>
               <select
@@ -146,15 +164,31 @@ const Upload = () => {
             <div className="col-md-12 d-flex justify-content-end">
               <button
                 type="button"
-                className="btn btn-secondary me-2 mt-2"
+                className="btn btn-secondary me-2 mt-2 crimson-text-regular"
                 onClick={resetForm}
               >
                 Reset
               </button>
-              <button type="submit" className="btn btn-success mt-2">
+              <button
+                type="submit"
+                className="btn btn-success mt-2 crimson-text-regular"
+              >
                 Add
               </button>
             </div>
+          </div>
+
+          <div
+            className="alert alert-success mt-2 alert-dismissible fade"
+            role="alert"
+          >
+            Upload successful!
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
           </div>
         </form>
       </div>
