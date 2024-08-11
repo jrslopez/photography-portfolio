@@ -17,6 +17,12 @@ const Upload = () => {
     }))
   }
 
+  const resetForm = () => {
+    updateField("imageURL", "")
+    updateField("albumName", "")
+    updateField("date", "")
+    updateField("front", "")
+  }
   useEffect(() => {
     const forms = document.querySelectorAll(".needs-validation")
 
@@ -138,8 +144,16 @@ const Upload = () => {
 
           <div className="row w-100 mx-auto">
             <div className="col-md-12 d-flex justify-content-end">
-              <button className="btn btn-secondary me-2 mt-2">Reset</button>
-              <button className="btn btn-success mt-2">Add</button>
+              <button
+                type="button"
+                className="btn btn-secondary me-2 mt-2"
+                onClick={resetForm}
+              >
+                Reset
+              </button>
+              <button type="submit" className="btn btn-success mt-2">
+                Add
+              </button>
             </div>
           </div>
         </form>
