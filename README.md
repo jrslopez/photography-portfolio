@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# JRSLopez Photography Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created this project to showcase my creative work in portrait photography.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+The website has a Home, About, Contact pages available to the public.
 
-### `npm start`
+### Home
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Home Page, serving as a landing page, displays standout photos from each session I have done over the years. Clicking on a photo redirects the user to the corresponding album. From there, the user can view the rest of the photos in the album in a lightbox.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### About
 
-### `npm test`
+The About Page contains a short biography, including a photo of myself
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Contact
 
-### `npm run build`
+The Contact Page allows the user to send messages to me, whether for inquiries, appreciation, or criticism.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Login and Upload
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A feature not visible to the public is the Login Page. As the admin (i.e., me), I can log in to the app and upload photos to the portfolio. In the Upload feature, the admin can submit a photo URL, album name, date, and choose whether to display it on the Home Page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Stack Used
 
-### `npm run eject`
+I used Postgres to handle my database, Express as my middleware, React as my front end framework, and Node as my javascript runtime environment.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Some of the libraries I used for ease of design include Bootstrap, bootstrap-icons, react-photo-album, and yet-another-react-lightbox.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Implementations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future, I plan to implement a feature that allows me to rearrange the photos, both on the Home Page and within albums. Another feature I’d like to add is an account creation tool so that another admin, besides myself, can upload photos on my behalf.
