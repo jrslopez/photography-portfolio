@@ -23,7 +23,7 @@ const Album = () => {
     <Fragment>
       <div>
         <h1
-          className="crimson-text-regular text-main"
+          className="crimson-text-regular text-main mx-3"
           style={{ fontSize: "50px" }}
         >
           {albumName}
