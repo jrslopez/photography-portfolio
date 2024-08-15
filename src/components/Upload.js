@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react"
 
 const Upload = () => {
+  document.title = "Upload"
   const [state, setState] = useState({
     imageURL: "",
     albumName: "",
@@ -47,7 +48,7 @@ const Upload = () => {
     try {
       e.preventDefault()
       const body = { album_name: albumName, date, url: imageURL, front }
-      const response = await fetch("http://localhost:4000/upload", {
+      await fetch("http://localhost:4000/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

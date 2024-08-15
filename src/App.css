@@ -35,3 +35,7 @@
 i:hover {
   cursor: pointer;
 }
+
+.footer-bg {
+  background-color: #0173aa;
+}

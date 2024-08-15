@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Fragment } from "react"
+import React, { useState, Fragment } from "react"
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
+  document.title = "Login"
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
 
@@ -59,7 +60,7 @@ const Login = () => {
             <div className="invalid-feedback">Wrong password!</div>
           </div>
 
-          <div className="">
+          <div className="mb-4">
             <button
               type="submit"
               className="btn btn-primary btn-sm crimson-text-regular"

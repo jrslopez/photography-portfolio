@@ -17,7 +17,7 @@ const MainGallery = () => {
   return (
     <Fragment>
       <div>
-        <div className="front-gallery">
+        <div className="front-gallery mb-5">
           <PhotoAlbum
             photos={frontImages}
             layout="rows"

@@ -10,7 +10,7 @@ function Navbar() {
           <div className="mt-4 crimson-text-bold">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <Link className="nav-link text-main" to="">
+                <Link className="nav-link text-main" to="/">
                   Home
                 </Link>
               </li>

@@ -9,11 +9,14 @@ import Contact from "./components/Contact"
 import Upload from "./components/Upload"
 import Album from "./components/Albums"
 import Login from "./components/Login"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 function App() {
   return (
     <Router>
       <div>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
@@ -22,6 +25,7 @@ function App() {
           <Route exact path="/:albumName" element={<Album />} />
           <Route exact path="/login" element={<Login />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   )
